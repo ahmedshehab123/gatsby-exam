@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Logout from "../pages/logout"
 
 const Header = ({ siteTitle }) => (
   <header
@@ -9,13 +10,7 @@ const Header = ({ siteTitle }) => (
       marginBottom: `1.45rem`,
     }}
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
+    <div>
 
       <h1 style={{ margin: 0 }}>
         <span
@@ -27,14 +22,12 @@ const Header = ({ siteTitle }) => (
         >
           {siteTitle}
         </span>
+
       </h1>
-      <div style={{color:'white',position: 'relative', left:'90%' , bottom:'10%'}}>
-      <h3>
-       {/* <Link to="/">
-          Logout</Link>*/}
-      </h3>
-      </div>
+      <Logout/>
+
     </div>
+
 
   </header>
 )
