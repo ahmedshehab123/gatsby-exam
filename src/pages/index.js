@@ -1,10 +1,10 @@
 import React from "react"
-import { Link,push } from "gatsby"
+import { push } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 let username='';
 let password='';
-let validPassword=true;
+
 
 export function handleUsernameChange(e) {
   username=e.target.value
@@ -17,7 +17,6 @@ export function login(e) {
   if(username === 'user' && password === 'user'){
    push('/exam');
   }else{
-    validPassword=false;
     var x = document.getElementById("error");
     x.style.display= "block";
 
@@ -40,8 +39,9 @@ const IndexPage = () => (
       </tr>
       <tr>
         <td>Password</td>
-        <td><input type="password" name="password" onChange={handlePasswordChange}/></td>
-        <span style={{color:'red',display:'none'}} id="error"  >Password error</span>
+        <td><input type="password" name="password" onChange={handlePasswordChange}/>
+          <span style={{color:'red',display:'none'}} id="error"  >Password error</span>
+        </td>
 
       </tr>
       <tr>
@@ -51,9 +51,6 @@ const IndexPage = () => (
       </tr>
       </tbody>
     </table>
-
-
-    <Link to="/exam/">Go to page 2</Link>
   </Layout>
 )
 

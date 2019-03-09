@@ -16,18 +16,26 @@ const Header = ({ siteTitle }) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
+
       <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
+        <span
+
           style={{
             color: `white`,
             textDecoration: `none`,
           }}
         >
           {siteTitle}
-        </Link>
+        </span>
       </h1>
+      <div style={{color:'white',position: 'relative', left:'90%' , bottom:'10%'}}>
+      <h3>
+       {/* <Link to="/">
+          Logout</Link>*/}
+      </h3>
+      </div>
     </div>
+
   </header>
 )
 
