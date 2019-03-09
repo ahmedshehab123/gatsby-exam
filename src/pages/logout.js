@@ -3,14 +3,32 @@ import { Link, push } from "gatsby"
 
 
 class Logout extends React.Component {
-  logout=event=>{
-    localStorage.removeItem('username');
-    push('/')
+  constructor() {
+    super()
+    this.state = {
+      logoutValiadtor: "",
+    }
   }
+
+  componentDidMount() {
+    this.validLogout()
+  }
+
+  logout = event => {
+    localStorage.removeItem("username")
+    push("/")
+  }
+  validLogout = event => {
+    if (localStorage.getItem("username")) {
+      this.setState({ logoutValiadtor: true })
+    }
+  }
+
   render() {
     return (
       <h3>
-        {localStorage.getItem("username") && <a style={{color:'white',position:'relative',left:'90%',bottom:'20px'}} href="#"  onClick={this.logout}>
+        {this.state.logoutValiadtor === true &&
+        <a style={{ color: "white", position: "relative", left: "90%", bottom: "20px" }} href="#" onClick={this.logout}>
           Logout</a>}
 
       </h3>)

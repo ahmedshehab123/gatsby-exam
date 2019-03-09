@@ -3,35 +3,41 @@ import PropTypes from "prop-types"
 import React from "react"
 import Logout from "../pages/logout"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div>
+class Header extends React.Component{
+  render() {
+    return (
+      <header
+        style={{
+          background: `rebeccapurple`,
+          marginBottom: `1.45rem`,
+        }}
+      >
+        <div>
 
-      <h1 style={{ margin: 0 }}>
+          <h1 style={{ margin: 0 }}>
         <span
 
           style={{
             color: `white`,
             textDecoration: `none`,
+            position:'relative',
+            left:'5%'
           }}
         >
-          {siteTitle}
+
+         Gatsby Exam
         </span>
 
-      </h1>
-      <Logout/>
+          </h1>
+          <Logout/>
 
-    </div>
+        </div>
 
 
-  </header>
-)
-
+      </header>
+    )
+  }
+}
 Header.propTypes = {
   siteTitle: PropTypes.string,
 }
@@ -39,5 +45,6 @@ Header.propTypes = {
 Header.defaultProps = {
   siteTitle: ``,
 }
+
 
 export default Header
