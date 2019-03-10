@@ -24,6 +24,7 @@ class Login extends React.Component {
 
 
   login = event => {
+
     if (this.state.username === "") {
       this.setState({ validEmptyUserName: false })
     }else{
@@ -35,7 +36,7 @@ class Login extends React.Component {
     }else {
       this.setState({ validEmptyPassword: true })
     }
-    if (this.state.username === "user" && this.state.password === "user") {
+    if ((this.state.username === "user" && this.state.password === "user") ||(this.state.username === 'admin' && this.state.password ==='admin')) {
       push("/exam")
       localStorage.setItem('username',this.state.username)
     } else {
