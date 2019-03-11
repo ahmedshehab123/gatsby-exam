@@ -1,8 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
 
-var jsonQuery = require("json-query")
-
 class Exam extends React.Component {
   constructor(props) {
     super(props)
@@ -62,8 +60,6 @@ class Exam extends React.Component {
 
   retrieveLastAnswers = event => {
     let key = "results_" + localStorage.getItem("username")
-
-    let username = localStorage.getItem("username")
 
     let objs = JSON.parse(localStorage.getItem(key.toString()))
     let obj = ""

@@ -1,5 +1,5 @@
 import React from "react"
-import { push } from "gatsby"
+import { navigate } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -37,7 +37,7 @@ class Login extends React.Component {
       this.setState({ validEmptyPassword: true })
     }
     if ((this.state.username === "user" && this.state.password === "user") ||(this.state.username === 'admin' && this.state.password ==='admin')) {
-      push("/exam")
+      navigate("/exam")
       localStorage.setItem('username',this.state.username)
     } else {
       this.setState({ validPassword: false })

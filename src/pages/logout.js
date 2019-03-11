@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, push } from "gatsby"
+import { Link,navigate } from "gatsby"
 
 
 class Logout extends React.Component {
@@ -16,7 +16,7 @@ class Logout extends React.Component {
 
   logout = event => {
     localStorage.removeItem("username")
-    push("/")
+    navigate("/")
   }
   validLogout = event => {
     if (localStorage.getItem("username")) {
@@ -28,8 +28,8 @@ class Logout extends React.Component {
     return (
       <h3>
         {this.state.logoutValiadtor === true &&
-        <a style={{ color: "white", position: "relative", left: "80%", bottom: "20px" }} href="#" onClick={this.logout}>
-          Logout</a>}
+        <Link to={'#'} style={{ color: "white", position: "relative", left: "80%", bottom: "20px" }} href="#" onClick={this.logout}>
+          Logout</Link>}
 
       </h3>)
   }
